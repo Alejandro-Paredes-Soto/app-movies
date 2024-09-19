@@ -1,0 +1,154 @@
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f4f4f9;
+    color: #333; */
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    display: flex;
+}
+
+.content {
+    margin-left: 250px; /* Deja espacio para el sidebar fijo */
+    width: calc(100% - 250px);
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto; /* El contenido es desplazable */
+    padding: 20px;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    margin-top: 15px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.body-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+
+/* Estructura de la card */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover para dar sensación moderna */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del producto */
+.card-image img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+/* Detalles del producto */
+.card-details {
+    flex-grow: 1;
+}
+
+.card-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.card-details strong {
+    color: #000;
+}
+
+.card-details .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.status.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status.pending {
+    background-color: #FF9800;
+    color: white;
+}
+
+/* Acciones en la card */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

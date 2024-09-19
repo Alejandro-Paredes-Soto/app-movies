@@ -1,0 +1,24 @@
+
+<div class="main-content">
+    <app-sidebar></app-sidebar>    
+  
+    <div class="content">
+        <app-navbar></app-navbar>
+  
+        <div class="header-content">
+            <h1 class="page-title">Available programs</h1>
+            <p class="page-description">Explore our totally free TV shows</p>
+        </div>
+  
+        <div class="body-content">
+            <app-card
+                *ngFor="let data of imgTv"
+                [idMovie]="data.id"
+                [imgMovie]="data.backdrop_path"
+                [titleMovie]="data.name"
+                [descriptionMovie]="data.overview">
+            </app-card>
+        </div>
+    </div>
+  </div>
+  

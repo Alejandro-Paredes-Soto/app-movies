@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap');
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+     min-height: 100vh;
+    
+}
+
+/*Estilos para opcion activada en sidenar*/
+.active {
+    background-color: #34495e !important; 
+    border-left: 5px solid #3498db !important;
+}

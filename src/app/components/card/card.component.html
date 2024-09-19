@@ -1,0 +1,23 @@
+<div class="card movie-card" title="Ver detalle completo">
+  <img [src]="'https://image.tmdb.org/t/p/w300/' + imgMovie" class="card-img-top">
+
+  <div class="card-body">
+      <h5 class="card-title">{{titleMovie}}</h5>
+      <p class="card-text">
+          {{ descriptionMovie.length > 100 ? (descriptionMovie | slice:0:50) + '...' : descriptionMovie }}
+      </p>
+
+        <a 
+        *ngIf="currentRoute === '/Home'"
+        [routerLink]="['/Details/', idMovie]" 
+        class="link-description">Ver detalle completo de {{titleMovie}}</a>
+
+        <button 
+          *ngIf="currentRoute === '/Tv'"
+          class="btn btn-primary btn-tv" style="margin-top: 10px;">
+          <i class="fas fa-tv"></i> Ver Programa de Televisión
+      </button>
+  </div>
+
+ 
+</div>

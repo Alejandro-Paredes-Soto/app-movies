@@ -1,0 +1,59 @@
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f4f4f9;
+    color: #333; */
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    display: flex;
+}
+
+.content {
+    margin-left: 250px; /* Deja espacio para el sidebar fijo */
+    width: calc(100% - 250px);
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto; /* El contenido es desplazable */
+    padding: 20px;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    margin-top: 15px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.body-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+/* Botones mejorados para las cards */
+.btn {
+    font-family: 'Poppins', sans-serif;
+}
+

@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="brand">Movie App</div>
+  <form class="search-form">
+    <input type="search" placeholder="Search..." aria-label="Buscar">
+    <button type="submit">Search</button>
+  </form>
+  <div class="nav-icons">
+    <a routerLink="/ListCar" style="cursor: pointer;"><i class="fas fa-shopping-cart"></i></a>
+    <a href="#"><i class="fas fa-user"></i></a>
+    <button class="logout-button" (click)="onLogout()">Log out</button>
+  </div>
+</nav>

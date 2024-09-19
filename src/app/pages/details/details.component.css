@@ -1,0 +1,22 @@
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+  
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    display: flex;
+}
+
+.content {
+    margin-left: 250px; /* Deja espacio para el sidebar fijo */
+    width: calc(100% - 250px);
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto; /* El contenido es desplazable */
+    padding: 20px;
+}

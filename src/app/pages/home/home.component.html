@@ -1,0 +1,23 @@
+
+<div class="main-content">
+  <app-sidebar></app-sidebar>    
+
+  <div class="content">
+      <app-navbar></app-navbar>
+
+      <div class="header-content">
+          <h1 class="page-title">Movies available</h1>
+          <p class="page-description">Browse our extensive catalog of movies and select your favorites to purchase or add to cart.</p>
+      </div>
+
+      <div class="body-content">
+          <app-card
+              *ngFor="let img of imgMovies"
+              [idMovie]="img.id"
+              [imgMovie]="img.backdrop_path"
+              [titleMovie]="img.original_title"
+              [descriptionMovie]="img.overview">
+          </app-card>
+      </div>
+  </div>
+</div>

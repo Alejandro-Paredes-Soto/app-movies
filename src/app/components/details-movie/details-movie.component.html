@@ -1,0 +1,33 @@
+<div class="movie-detail-container">
+    <div class="movie-image">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + imgMovie" alt="Movie Image">
+    </div>
+
+    <div class="movie-info">
+        <h1 class="movie-title">{{titleMovie}}</h1>
+        <p class="movie-description">{{ descriptionMovie }}</p>
+        
+        <div class="movie-buttons">
+            <button class="btn-buy" (click)="onPay(idMovie)">
+                Comprar <i class="fas fa-dollar-sign"></i>
+            </button>
+            <button class="btn-cart" (click)="onAddCar(idMovie)">
+                Agregar al carrito <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-modal 
+[type]="SvcGlobal.type"
+[showModal]="SvcGlobal.isErrorModalVisible" 
+[message]="SvcGlobal.currentErrorMessage" 
+(close)="SvcGlobal.onModalClose()">
+</app-modal>
+
+<app-methodpay
+ [showModal]="showModal"
+ (close)="closeModal()"
+>
+
+</app-methodpay>

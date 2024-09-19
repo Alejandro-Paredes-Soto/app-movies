@@ -1,0 +1,63 @@
+
+<div class="main-content">
+    <app-sidebar></app-sidebar>    
+  
+    <div class="content">
+        <app-navbar></app-navbar>
+  
+        <div class="header-content">
+            <h1 class="page-title">Shopping cart</h1>
+            <p class="page-description">Here we show your list of movies you want to buy</p>
+        </div>
+  
+        <div class="body-content">
+                
+                
+                <div class="cart-items">
+                    <div class="cart-item" *ngFor="let movie of listCar">
+                        <div class="cart-item-image">
+                            <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.imgMovie" alt="Movie Image">
+                        </div>
+                        <div class="cart-item-info">
+                            <h2 class="cart-item-title">{{ movie.titleMovie }}</h2>
+                            <p class="cart-item-description">{{ movie.descriptionMovie }}</p>
+                            
+                            <div class="cart-item-buttons">
+                                <button class="btn-remove" (click)="onRemoveMovie(movie.imgMovie)">
+                                    Eliminar <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <button class="btn-buy" (click)="showModal2 = true">
+                                    Comprar <i class="fas fa-dollar-sign"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            
+        </div>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <h2 
+      [ngStyle]="{'color':'#f39c12'} ">Advertencia</h2>
+      <p>¿Seguro que deseas eliminar la pelicula?</p>
+
+       <div class="btns">
+
+        <button class="btn btn-success btn-lg" (click)="onConfirm()">Si</button>
+        <button class="btn btn-danger btn-lg" (click)="closeModal()">No</button>
+
+       </div>
+    </div>
+
+  </div>
+
+
+  <app-methodpay
+  [showModal]="showModal2"
+  (close)="closeModal2()"
+ >

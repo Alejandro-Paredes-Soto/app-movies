@@ -1,0 +1,93 @@
+/* Importación de tipografía moderna desde Google Fonts */
+
+* {
+    font-family: 'Roboto', sans-serif;
+    /* background-color: #f5f7fa;
+    color: #2c3e50; */
+    /* margin: 0;
+    padding: 0; */
+}
+
+.movie-detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-detail-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.movie-image img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.movie-info {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.movie-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.movie-description {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.movie-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-buy, .btn-cart {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-buy {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+
+.btn-cart {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.btn-cart:hover {
+    background-color: #27ae60;
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+
+i {
+    margin-left: 10px;
+}
