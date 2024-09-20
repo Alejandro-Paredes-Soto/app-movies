@@ -16,9 +16,11 @@ import { MethodpayComponent } from '../../components/methodpay/methodpay.compone
 export class ListCarComponent  implements OnInit{
 
    
-   public listCar: {idMovie: string, imgMovie: string, titleMovie: string, descriptionMovie: string}[] = []
    public showModal: boolean = false;
    public idMovie: string = '';
+   public imgMovie: string = '';
+   public isCar: boolean = true;
+   public titleMovie: string = '';
 
    public showModal2: boolean = false;
 
@@ -30,7 +32,7 @@ export class ListCarComponent  implements OnInit{
 
       if (getListCar){
           
-          this.listCar = JSON.parse(getListCar)
+          this.SvcGlobal.listCar = JSON.parse(getListCar)
       }
      
    }
@@ -38,7 +40,7 @@ export class ListCarComponent  implements OnInit{
    onRemoveMovie (imgMovie: string){
     this.showModal = true
 
-    let findIdMovie = this.listCar.find((v) => v.imgMovie == imgMovie);
+    let findIdMovie = this.SvcGlobal.listCar.find((v) => v.imgMovie == imgMovie);
 
     if (findIdMovie){
 
@@ -55,11 +57,20 @@ export class ListCarComponent  implements OnInit{
     this.showModal2 = false;
    }
 
+   onPayMovie (movie: any) {
+    this.idMovie = movie.idMovie;
+    this.imgMovie = movie.imgMovie;
+    this.titleMovie = movie.titleMovie;
+
+    this.showModal2 = true;
+
+    }
+
    onConfirm (): void {
      
-       const newData = this.listCar.filter((v) => v.idMovie !== this.idMovie);
+       const newData = this.SvcGlobal.listCar.filter((v) => v.idMovie !== this.idMovie);
        localStorage.setItem("car", JSON.stringify(newData))
-       this.listCar = newData
+       this.SvcGlobal.listCar = newData
        this.showModal = false
    }
 }

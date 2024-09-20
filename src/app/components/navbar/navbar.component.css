@@ -1,62 +1,116 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    min-height: 50px;
-    box-sizing: border-box;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  min-height: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+}
 
+.navbar .brand {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .search-form {
+  display: flex;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.navbar .search-form input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  flex-grow: 1;
+  outline: none;
+}
+
+.navbar .search-form button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .search-form button:hover {
+  background-color: #218838;
+}
+
+.navbar .nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-icons a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 1.2em;
+}
+
+.navbar .nav-icons a:hover {
+  color: #ddd;
+}
+
+.navbar .logout-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.navbar .logout-button:hover {
+  color: #ddd;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.mobile-menu a, .mobile-menu button {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.mobile-menu a:hover, .mobile-menu button:hover {
+  background-color: #444;
+}
+
+@media (max-width: 955px) {
+  .navbar .search-form, .navbar .nav-icons {
+    display: none;
   }
-  .navbar .brand {
-    font-size: 1.5em;
-    font-weight: bold;
+
+  .hamburger-icon {
+    display: block;
   }
-  .navbar .search-form {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 20px;
+
+  .mobile-menu.active {
+    display: block;
   }
-  .navbar .search-form input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    flex-grow: 1;
-    outline: none;
-  }
-  .navbar .search-form button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-  }
-  .navbar .search-form button:hover {
-    background-color: #218838;
-  }
-  .navbar .nav-icons {
-    display: flex;
-    align-items: center;
-  }
-  .navbar .nav-icons a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 1.2em;
-  }
-  .navbar .nav-icons a:hover {
-    color: #ddd;
-  }
-  .navbar .logout-button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  .navbar .logout-button:hover {
-    color: #ddd;
-  }
+}

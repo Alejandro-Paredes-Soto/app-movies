@@ -9,16 +9,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 
 .modal-container {
   background-color: white;
-  width: 400px;
+  max-width: 600px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
   font-family: 'Arial', sans-serif;
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -30,7 +32,10 @@
 }
 
 .modal-body {
+  display: flex;
   margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .payment-options {
@@ -92,4 +97,109 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+
+
+.payment-form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.payment-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: #4caf50;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.payment-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+}
+
+input[type="text"], input[type="month"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
 }

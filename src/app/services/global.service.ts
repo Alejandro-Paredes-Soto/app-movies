@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angul
 import { Injectable } from '@angular/core';
 import { catchError, map, of } from 'rxjs';
 import { IMovieResponse } from '../models/movie/movie.module';
+import { ICard } from '../models/card/card.module';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,12 @@ export class GlobalService {
    public currentErrorMessage: string  = '';
    public type = "Bien"
    public typeMethodPay: number = 0;
+   public listCar: {idMovie: string, imgMovie: string, titleMovie: string, descriptionMovie: string}[] = []
+   public searchText: string = '';
+   
+  public methodPayCard: boolean = false;
+  public methodPayTransference: boolean = false;
+
 
 
    constructor(private http: HttpClient) {
@@ -47,15 +54,22 @@ export class GlobalService {
     );
   }
 
-  selectPayment(idPaymentMethod: number) { this.typeMethodPay = idPaymentMethod}
-
-  onConfirmPay () {
-
-    if (this.typeMethodPay == 0){
-       this.triggerModal("Error", true, "Elige un metodo de pago")
-    }
+  methodPost<T>(token: string, url: string, body: Object, params?: string, ) {
     
+     return this.http.post<T>(`${this.BASE_URL}${url}${params ? params : ''}`, body, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      }),
+      observe: 'response'
+     }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error:', error); 
+        return of(error); 
+      })
+    );
   }
+
+  
   
   
   

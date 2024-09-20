@@ -6,11 +6,12 @@ import { GlobalService } from '../../services/global.service';
 import { ITvResponse, Tv } from '../../models/tv/tv.module';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { CardComponent } from '../../components/card/card.component';
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-tv',
   standalone: true,
-  imports: [SidebarComponent, NavbarComponent, CommonModule, CardComponent],
+  imports: [SidebarComponent, NavbarComponent, CommonModule, CardComponent, FilterPipe],
   templateUrl: './tv.component.html',
   styleUrl: './tv.component.css'
 })
@@ -19,7 +20,7 @@ export class TvComponent implements OnInit{
     
      public imgTv: Tv[] = [];
    
-    constructor (private SvcGlobal: GlobalService) {
+    constructor (public SvcGlobal: GlobalService) {
 
     }
   ngOnInit(): void {

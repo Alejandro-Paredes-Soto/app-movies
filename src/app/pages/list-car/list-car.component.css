@@ -221,3 +221,17 @@ p {
     padding-right: 7px;
     padding-left: 7px;
 }
+
+
+@media (max-width: 526px){
+   .cart-item {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .cart-item-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+}

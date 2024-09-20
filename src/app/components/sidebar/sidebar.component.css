@@ -41,3 +41,9 @@
     color: #ffffff; /* Color de texto al pasar el ratón sobre el activo */
   }
   
+
+  @media (max-width: 955px) {
+     .sidebar {
+      display: none;
+     }
+  }

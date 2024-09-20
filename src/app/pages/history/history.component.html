@@ -11,15 +11,15 @@
   
         <div class="body-content">
 
-            <div class="card-container">
+            <div class="card-container" *ngFor="let item of history | filter: SvcGlobal.searchText">
                 <div class="card">
                     <div class="card-image">
-                        <img src="https://via.placeholder.com/150" alt="Product Image">
+                        <img [src]="'https://image.tmdb.org/t/p/w300' + item.poster_Path" alt="Product Image">
                     </div>
                     <div class="card-details">
-                        <h3>Producto: <span>Audífonos Inalámbricos</span></h3>
-                        <p>Fecha de Compra: <strong>12 Septiembre 2024</strong></p>
-                        <p>Precio: <strong>$120.00</strong></p>
+                        <h3>Titulo: <span>{{item.title}}</span></h3>
+                        <p>Fecha de Compra: <strong>{{item.date_Created}}</strong></p>
+                        <p>Precio: <strong>${{item.total}}</strong></p>
                         <p>Estado: <span class="status success">Entregado</span></p>
                     </div>
                     <div class="card-actions">
@@ -37,7 +37,3 @@
     </div>
   </div>
   
-
-  <app-methodpay>
-    
-  </app-methodpay>

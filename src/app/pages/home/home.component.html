@@ -12,7 +12,7 @@
 
       <div class="body-content">
           <app-card
-              *ngFor="let img of imgMovies"
+              *ngFor="let img of imgMovies | filter: SvcGlobal.searchText"
               [idMovie]="img.id"
               [imgMovie]="img.backdrop_path"
               [titleMovie]="img.original_title"

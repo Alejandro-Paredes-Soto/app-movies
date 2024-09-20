@@ -6,11 +6,12 @@ import { GlobalService } from '../../services/global.service';
 import { CommonModule } from '@angular/common';
 import { IMovieResponse, Movie } from '../../models/movie/movie.module';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent, NavbarComponent, CardComponent, CommonModule],
+  imports: [SidebarComponent, NavbarComponent, CardComponent, CommonModule, FilterPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,7 +20,7 @@ export class HomeComponent {
   
   public imgMovies: Movie[] = [];
 
-   constructor (private SvcGlobal: GlobalService) {
+   constructor (public SvcGlobal: GlobalService) {
 
     this.SvcGlobal.methodGet<IMovieResponse>(localStorage.getItem("token")!, "Movies").subscribe(
       (response) => {

@@ -17,3 +17,11 @@ html, body {
     background-color: #34495e !important; 
     border-left: 5px solid #3498db !important;
 }
+
+@media (max-width: 955px){
+    .content {
+        margin-left: 0px !important;
+        width: 100% !important;
+    }
+    
+}

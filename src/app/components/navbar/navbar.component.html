@@ -1,12 +1,31 @@
 <nav class="navbar">
   <div class="brand">Movie App</div>
-  <form class="search-form">
-    <input type="search" placeholder="Search..." aria-label="Buscar">
-    <button type="submit">Search</button>
-  </form>
+   <app-search></app-search>
   <div class="nav-icons">
     <a routerLink="/ListCar" style="cursor: pointer;"><i class="fas fa-shopping-cart"></i></a>
     <a href="#"><i class="fas fa-user"></i></a>
     <button class="logout-button" (click)="onLogout()">Log out</button>
+  </div>
+  <!-- Icono de hamburguesa -->
+  <div class="hamburger-icon" (click)="onToggleSubMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <!-- Menú desplegable para pantallas pequeñas -->
+  <div class="mobile-menu" [ngClass]="{'active': subMenu}">
+    <a routerLink="/Home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <i class="fas fa-home"></i> Home
+    </a>
+    <a routerLink="/Tv" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <i class="fas fa-tv"></i> TV
+    </a>
+    <a routerLink="/History" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <i class="fas fa-history"></i> Purchase history
+    </a>
+    <a routerLink="/ListCar">
+      <i class="fas fa-shopping-cart"></i> Carrito de compras
+    </a>
+    <button class="logout-button" (click)="onLogout()">
+      <i class="fas fa-sign-out-alt"></i> Log out
+    </button>
   </div>
 </nav>

@@ -3,33 +3,73 @@
     <div class="modal-container">
       <div class="modal-header">
         <h2>Método de Pago</h2>
-        <button class="close-btn" (click)="closeModal()">X</button>
+        <button 
+        class="close-btn" 
+        style="background: lightcoral; color: white; font-weight: bold;" 
+        (click)="closeModal()">X</button>
       </div>
+      <p style="margin-top: 10px;">Seleccione su método de pago preferido:</p>
       <div class="modal-body">
-        <p>Seleccione su método de pago preferido:</p>
+        
         <div class="payment-options">
           <label class="payment-option">
-            <input type="radio" name="paymentMethod" value="1" (change)="SvcGlobal.selectPayment(1)">
+            <input type="radio" name="paymentMethod" value="1" (change)="selectPayment(1)">
             <i class="fas fa-money-bill-wave"></i> Efectivo
           </label>
           <label class="payment-option">
-            <input type="radio" name="paymentMethod" value="3" (change)="SvcGlobal.selectPayment(3)">
+            <input type="radio" name="paymentMethod" value="3" (change)="selectPayment(3)">
             <i class="fas fa-credit-card"></i> Tarjeta de Crédito
           </label>
           <label class="payment-option">
-            <input type="radio" name="paymentMethod" value="2" (change)="SvcGlobal.selectPayment(2)">
+            <input type="radio" name="paymentMethod" value="2" (change)="selectPayment(2)">
             <i class="fas fa-credit-card"></i> Tarjeta de Débito
           </label>
           <label class="payment-option">
-            <input type="radio" name="paymentMethod" value="4" (change)="SvcGlobal.selectPayment(4)">
+            <input type="radio" name="paymentMethod" value="4" (change)="selectPayment(4)">
             <i class="fas fa-university"></i> Transferencia Bancaria
           </label>
         </div>
+
+         <!-- Campos para Tarjeta -->
+         <div id="tarjeta-fields" style="margin-left: 15px;" class="payment-details" *ngIf="methodPayCard">
+           <form [formGroup]="cardForm">
+            <label for="card-number">Número de tarjeta:</label>
+          <input type="text" formControlName="cardNumber" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+
+          <label for="card-holder">Nombre del titular:</label>
+          <input type="text" formControlName="cardHolder" id="card-holder" name="card-holder" placeholder="Nombre del titular">
+
+          <label for="expiry-date">Fecha de vencimiento:</label>
+          <input type="month" formControlName="expireDate" id="expiry-date" name="expiry-date">
+
+          <label for="cvv">CVV:</label>
+          <input type="text" formControlName="cvv" id="cvv" name="cvv" placeholder="XXX" maxlength="3">
+           </form>
       </div>
+
+      <!-- Campos para Transferencia -->
+      <div id="transferencia-fields" style="margin-left: 15px;" class="payment-details" *ngIf="methodPayTransference">
+         <form [formGroup]="transferForm">
+         <label for="bank-name">Nombre del banco:</label>
+         <input type="text" formControlName="bankName" id="bank-name" name="bank-name" placeholder="Nombre del banco">
+
+         <label for="account-number">Número de cuenta:</label>
+         <input type="text" formControlName="accountNumber" id="account-number" name="account-number" placeholder="XXXXXXXXXX">
+
+         <label for="account-owner">Nombre del titular de la cuenta:</label>
+         <input type="text" formControlName="accountOwner" id="account-owner" name="account-owner" placeholder="Nombre del titular">
+        </form>
+      </div>
+
+      </div>
+
+           
       <div class="modal-footer" style="display: flex; justify-content: space-around;">
 
         <b>Total a pagar: 100 pesos</b>
-        <button class="confirm-btn" (click)="SvcGlobal.onConfirmPay()">Confirmar</button>
+
+
+        <button class="confirm-btn" (click)="onConfirmPay()">Confirmar</button>
       </div>
     </div>
   </div>
