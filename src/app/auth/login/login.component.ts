@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { GlobalService } from '../../services/global.service';
 import { ILogin } from '../../models/login/login.module';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, ModalComponent, CommonModule],
+  imports: [ReactiveFormsModule, ModalComponent, CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

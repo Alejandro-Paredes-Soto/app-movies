@@ -4,12 +4,12 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
 import { ModalComponent } from '../../components/modal/modal.component';
 import { GlobalService } from '../../services/global.service';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ModalComponent],
+  imports: [ReactiveFormsModule, CommonModule, ModalComponent, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

@@ -3,8 +3,8 @@
     font-family: 'Outfit';
 }
 
-.container {
-    width: 100%;
+.containerr {
+    width: 100% !important;
     height: 100vh;
     display: flex;
     justify-content: center;

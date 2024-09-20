@@ -6,11 +6,11 @@
     <a href="#"><i class="fas fa-user"></i></a>
     <button class="logout-button" (click)="onLogout()">Log out</button>
   </div>
-  <!-- Icono de hamburguesa -->
+ 
   <div class="hamburger-icon" (click)="onToggleSubMenu()">
     <i class="fas fa-bars"></i>
   </div>
-  <!-- Menú desplegable para pantallas pequeñas -->
+  
   <div class="mobile-menu" [ngClass]="{'active': subMenu}">
     <a routerLink="/Home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
       <i class="fas fa-home"></i> Home

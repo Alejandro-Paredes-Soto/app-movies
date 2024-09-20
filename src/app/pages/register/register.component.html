@@ -1,6 +1,6 @@
-<div class="container">
+<div class="containerr">
   <div class="register-box">
-    <h2>Registro de Usuario</h2>
+    <h2>Register user</h2>
     <form [formGroup]="registerForm">
       <div class="form-row">
         <div class="input-group">
@@ -36,7 +36,7 @@
       <button *ngIf="isLoading" disabled class="btn">Loading...</button>
       <button *ngIf="!isLoading" type="button" class="btn" (click)="onSubmit()">Register</button>
     </form>
-    <p class="signup-text">Do you already have an account?<a routerLink="/">Login here</a></p>
+    <p class="signup-text">Do you already have an account? <a routerLink="/">Login here</a></p>
   </div>
 </div>
 
