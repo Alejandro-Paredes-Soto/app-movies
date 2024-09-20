@@ -24,10 +24,10 @@
                             
                             <div class="cart-item-buttons">
                                 <button class="btn-remove" (click)="onRemoveMovie(movie.imgMovie)">
-                                    Eliminar <i class="fas fa-trash-alt"></i>
+                                    Delete <i class="fas fa-trash-alt"></i>
                                 </button>
                                 <button class="btn-buy" (click)="onPayMovie(movie)">
-                                    Comprar <i class="fas fa-dollar-sign"></i>
+                                    Shopping <i class="fas fa-dollar-sign"></i>
                                 </button>
                             </div>
                         </div>
@@ -43,12 +43,12 @@
     <div class="modal-content">
       <span class="close-btn" (click)="closeModal()">&times;</span>
       <h2 
-      [ngStyle]="{'color':'#f39c12'} ">Advertencia</h2>
-      <p>¿Seguro que deseas eliminar la pelicula?</p>
+      [ngStyle]="{'color':'#f39c12'} ">Warning</h2>
+      <p>Are you sure you want to delete the movie?</p>
 
        <div class="btns">
 
-        <button class="btn btn-success btn-lg" (click)="onConfirm()">Si</button>
+        <button class="btn btn-success btn-lg" (click)="onConfirm()">Yes</button>
         <button class="btn btn-danger btn-lg" (click)="closeModal()">No</button>
 
        </div>

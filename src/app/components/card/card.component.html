@@ -10,12 +10,12 @@
         <a 
         *ngIf="currentRoute === '/Home'"
         [routerLink]="['/Details/', idMovie]" 
-        class="link-description">Ver detalle completo de {{titleMovie}}</a>
+        class="link-description">See full details of {{titleMovie}}</a>
 
         <button 
           *ngIf="currentRoute === '/Tv'"
           class="btn btn-primary btn-tv" style="margin-top: 10px;">
-          <i class="fas fa-tv"></i> Ver Programa de Televisión
+          <i class="fas fa-tv"></i> Watch TV Show
       </button>
   </div>
 

@@ -2,44 +2,44 @@
 <div class="modal-overlay" *ngIf="showModal">
     <div class="modal-container">
       <div class="modal-header">
-        <h2>Método de Pago</h2>
+        <h2>Payment Method</h2>
         <button 
         class="close-btn" 
         style="background: lightcoral; color: white; font-weight: bold;" 
         (click)="closeModal()">X</button>
       </div>
-      <p style="margin-top: 10px;">Seleccione su método de pago preferido:</p>
+      <p style="margin-top: 10px;">Select your preferred payment method:</p>
       <div class="modal-body">
         
         <div class="payment-options">
           <label class="payment-option">
             <input type="radio" name="paymentMethod" value="1" (change)="selectPayment(1)">
-            <i class="fas fa-money-bill-wave"></i> Efectivo
+            <i class="fas fa-money-bill-wave"></i> Cash
           </label>
           <label class="payment-option">
             <input type="radio" name="paymentMethod" value="3" (change)="selectPayment(3)">
-            <i class="fas fa-credit-card"></i> Tarjeta de Crédito
+            <i class="fas fa-credit-card"></i> Credit card
           </label>
           <label class="payment-option">
             <input type="radio" name="paymentMethod" value="2" (change)="selectPayment(2)">
-            <i class="fas fa-credit-card"></i> Tarjeta de Débito
+            <i class="fas fa-credit-card"></i> Debit Tarjeta 
           </label>
           <label class="payment-option">
             <input type="radio" name="paymentMethod" value="4" (change)="selectPayment(4)">
-            <i class="fas fa-university"></i> Transferencia Bancaria
+            <i class="fas fa-university"></i> Bank Transfer
           </label>
         </div>
 
          <!-- Campos para Tarjeta -->
          <div id="tarjeta-fields" style="margin-left: 15px;" class="payment-details" *ngIf="methodPayCard">
            <form [formGroup]="cardForm">
-            <label for="card-number">Número de tarjeta:</label>
+            <label for="card-number">Card number:</label>
           <input type="text" formControlName="cardNumber" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
 
-          <label for="card-holder">Nombre del titular:</label>
+          <label for="card-holder">Owner's name:</label>
           <input type="text" formControlName="cardHolder" id="card-holder" name="card-holder" placeholder="Nombre del titular">
 
-          <label for="expiry-date">Fecha de vencimiento:</label>
+          <label for="expiry-date">Expiration date:</label>
           <input type="month" formControlName="expireDate" id="expiry-date" name="expiry-date">
 
           <label for="cvv">CVV:</label>
@@ -50,13 +50,13 @@
       <!-- Campos para Transferencia -->
       <div id="transferencia-fields" style="margin-left: 15px;" class="payment-details" *ngIf="methodPayTransference">
          <form [formGroup]="transferForm">
-         <label for="bank-name">Nombre del banco:</label>
+         <label for="bank-name">Bank name:</label>
          <input type="text" formControlName="bankName" id="bank-name" name="bank-name" placeholder="Nombre del banco">
 
-         <label for="account-number">Número de cuenta:</label>
+         <label for="account-number">Account number:</label>
          <input type="text" formControlName="accountNumber" id="account-number" name="account-number" placeholder="XXXXXXXXXX">
 
-         <label for="account-owner">Nombre del titular de la cuenta:</label>
+         <label for="account-owner">Account holder name:</label>
          <input type="text" formControlName="accountOwner" id="account-owner" name="account-owner" placeholder="Nombre del titular">
         </form>
       </div>
@@ -66,10 +66,10 @@
            
       <div class="modal-footer" style="display: flex; justify-content: space-around;">
 
-        <b>Total a pagar: 100 pesos</b>
+        <b>Total to pay: 100 pesos </b>
 
 
-        <button class="confirm-btn" (click)="onConfirmPay()">Confirmar</button>
+        <button class="confirm-btn" (click)="onConfirmPay()">Confirm</button>
       </div>
     </div>
   </div>
